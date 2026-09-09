@@ -8,12 +8,15 @@ These rules constrain agent behavior without prescribing tools, workflows, or pr
 
 Coding agents usually fail through poor judgment, not missing instructions.
 
-This project focuses on four durable behaviors:
+A small set of constraints holds at every step: never fabricate or fake success, never act destructively without confirmation, and keep naming, architecture, and user-facing behavior consistent. A stated priority order settles conflicts between rules.
 
-1. Understand the goal before changing code.
+On top of that, five durable behaviors run in sequence:
+
+1. Understand the goal, and surface what the request gets wrong or leaves out.
 2. Understand the existing system before designing a solution.
-3. Make the smallest coherent change that preserves contracts.
-4. Verify outcomes with fresh evidence before claiming success.
+3. Design the smallest solution that carries no unrequested weight.
+4. Make surgical changes that preserve contracts.
+5. Verify outcomes with fresh evidence before claiming success.
 
 ## Files
 
@@ -21,6 +24,7 @@ This project focuses on four durable behaviors:
 | --- | --- |
 | `AGENTS.md` | Canonical guidelines for Codex and other compatible agents. |
 | `CLAUDE.md` | Claude Code entry point that imports `AGENTS.md`. |
+| `skills/coding-guidelines/SKILL.md` | Standalone skill package. Its body duplicates `AGENTS.md` so the skill can be distributed on its own. |
 
 Keep `AGENTS.md` authoritative. Keep `CLAUDE.md` as a compatibility shim.
 
@@ -77,7 +81,9 @@ Keep changes small and defensible.
 
 Explain the failure mode addressed by every new rule.
 
-Update `AGENTS.md` only. Preserve `CLAUDE.md` as the import shim.
+Edit `AGENTS.md` first. Preserve `CLAUDE.md` as the import shim.
+
+After changing `AGENTS.md`, mirror the body into `skills/coding-guidelines/SKILL.md`. The two must stay identical word for word.
 
 ## License
 
