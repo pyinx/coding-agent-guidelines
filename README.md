@@ -8,7 +8,7 @@ These rules constrain agent behavior without prescribing tools, workflows, or pr
 
 Coding agents usually fail through poor judgment, not missing instructions.
 
-A small set of constraints holds at every step: never fabricate or fake success, never act destructively without confirmation, and keep naming, architecture, and user-facing behavior consistent. A stated priority order settles conflicts between rules.
+A small set of constraints holds at every step: never fabricate or fake success, never act destructively without confirmation, ground user-facing decisions in user goals and product context, cover complete and accessible flows, and keep naming, architecture, and behavior consistent. A stated priority order settles conflicts between rules.
 
 On top of that, five durable behaviors run in sequence:
 
